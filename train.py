@@ -17,6 +17,7 @@ from utils.utils import *
 mixed_precision = True
 try:  # Mixed precision training https://github.com/NVIDIA/apex
     from apex import amp
+    print("Using apex for training.......")
 except:
     print('Apex recommended for faster mixed precision training: https://github.com/NVIDIA/apex')
     mixed_precision = False  # not installed
@@ -372,6 +373,7 @@ def train(hyp):
     n = ('_' if len(opt.name) and not opt.name.isnumeric() else '') + opt.name
     fresults, flast, fbest = 'results%s.txt' % n, wdir + \
         'last%s.pt' % n, wdir + 'best%s.pt' % n
+
     for f1, f2 in zip([wdir + 'last.pt', wdir + 'best.pt', 'results.txt'], [flast, fbest, fresults]):
         if os.path.exists(f1):
             os.rename(f1, f2)  # rename
@@ -394,8 +396,8 @@ def train(hyp):
 if __name__ == '__main__':
     check_git_status()
     parser = argparse.ArgumentParser()
-    parser.add_argument('--epochs', type=int, default=200)
-    parser.add_argument('--batch-size', type=int, default=16)
+    parser.add_argument('--epochs', type=int, default=50)
+    parser.add_argument('--batch-size', type=int, default=32)
     parser.add_argument('--cfg', type=str,
                         default='models/yolov5s.yaml', help='*.cfg path')
     parser.add_argument('--data', type=str,

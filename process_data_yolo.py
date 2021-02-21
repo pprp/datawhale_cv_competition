@@ -11,8 +11,8 @@ import shutil
 import cv2
 from tqdm import tqdm
 
-ImgPath = './convertor/fold0/images/train/'  #原始图片
-path = './convertor/fold0/labels/train/'  #原始标注
+ImgPath = '/home/pdluser/project/tmp_dir_for_tianchi_data/convertor/fold0/images/val/'  #原始图片
+path = '/home/pdluser/project/tmp_dir_for_tianchi_data/convertor/fold0/labels/val/'  #原始标注
 
 ProcessedPath = './process_data/'  #生成后数据
 
@@ -37,8 +37,8 @@ for file in txtfiles: #遍历txt进行操作
 
     f = open(os.path.join(path, file), "r")
     lines = f.readlines()
-    savepath_img = ProcessedPath + 'images' + '/train'  #处理完的图片保存路径
-    savepath_txt = ProcessedPath + 'labels' + '/train'  #处理完的图片标签路径
+    savepath_img = ProcessedPath + 'images' + '/val'  #处理完的图片保存路径
+    savepath_txt = ProcessedPath + 'labels' + '/val'  #处理完的图片标签路径
     if not os.path.exists(savepath_img):
         os.makedirs(savepath_img)
     if not os.path.exists(savepath_txt):

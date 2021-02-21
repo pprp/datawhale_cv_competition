@@ -1,6 +1,7 @@
 # Base Images
 
-FROM registry.cn-shanghai.aliyuncs.com/tcc-public/pytorch:1.4-cuda10.1-py3
+FROM 76c152fbfd03 As build
+#registry.cn-shanghai.aliyuncs.com/tcc-public/pytorch:1.4-cuda10.1-py3
 
 ADD . /
 

@@ -11,8 +11,8 @@ import cv2
 # josn_path = "/home/pdluser/data/guangdong1_round2_train_part1_20190924/Annotations/anno_train.json"
 # image_path = "/home/pdluser/data/guangdong1_round2_train_part1_20190924/defect"
 
-# josn_path = "/home/pdluser/data/guangdong1_round2_train_part2_20190924/Annotations/anno_train.json"
-# image_path = "/home/pdluser/data/guangdong1_round2_train_part2_20190924/defect"
+josn_path = "/home/pdluser/data/guangdong1_round2_train_part1_20190924/Annotations/anno_train.json"
+image_path = "/home/pdluser/data/guangdong1_round2_train_part3_20190924/defect"
 
 
 name_list = []
