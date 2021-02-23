@@ -11,8 +11,8 @@ import shutil
 import cv2
 from tqdm import tqdm
 
-ImgPath = '/home/pdluser/project/tmp_dir_for_tianchi_data/convertor/fold0/images/val/'  #原始图片
-path = '/home/pdluser/project/tmp_dir_for_tianchi_data/convertor/fold0/labels/val/'  #原始标注
+ImgPath = '/media/niu/niu_d/dpj_workspace/datawhale_cv_competition/convertor/fold0/images/val/'  #原始图片
+path = '/media/niu/niu_d/dpj_workspace/datawhale_cv_competition/convertor/fold0/labels/val/'  #原始标注
 
 ProcessedPath = './process_data/'  #生成后数据
 

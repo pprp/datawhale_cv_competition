@@ -5,14 +5,14 @@ from tqdm import tqdm
 import shutil as sh
 import cv2
 
-# josn_path = "/home/pdluser/data/guangdong1_round2_train2_20191004_Annotations/Annotations/anno_train.json"
-# image_path = "/home/pdluser/data/guangdong1_round2_train2_20191004_images/defect/"
+josn_path = "/media/niu/niu_d/data/competition/guangdong1_round2_train2_20191004_Annotations/guangdong1_round2_train2_20191004_Annotations/Annotations/anno_train.json"
+image_path = "/media/niu/niu_d/data/competition/guangdong1_round2_train2_20191004_images/guangdong1_round2_train2_20191004_images/defect/"
 
 # josn_path = "/home/pdluser/data/guangdong1_round2_train_part1_20190924/Annotations/anno_train.json"
 # image_path = "/home/pdluser/data/guangdong1_round2_train_part1_20190924/defect"
 
-josn_path = "/home/pdluser/data/guangdong1_round2_train_part1_20190924/Annotations/anno_train.json"
-image_path = "/home/pdluser/data/guangdong1_round2_train_part3_20190924/defect"
+# josn_path = "/home/pdluser/data/guangdong1_round2_train_part1_20190924/Annotations/anno_train.json"
+# image_path = "/home/pdluser/data/guangdong1_round2_train_part3_20190924/defect"
 
 
 name_list = []
@@ -36,8 +36,9 @@ with open(josn_path, 'r') as f:
         if im is None:
             print(path)
             continue
-        sp = im.shape
-        image_h, image_w = sp[0], sp[1]
+        else:
+            sp = im.shape
+            image_h, image_w = sp[0], sp[1]
         # print("image_h, image_w: ", image_h, image_w)
         # print("defect_name: ",temp["defect_name"])
         #bboxs
@@ -105,10 +106,7 @@ with open(josn_path, 'r') as f:
                 path2save = 'val/'
             else:
                 path2save = 'train/'
-            # print('convertor\\fold{}\\labels\\'.format(fold) + path2save)
-            # print('convertor\\fold{}/labels\\'.format(fold) + path2save + name.split('.')[0] + ".txt")
-            # print("{}/{}".format(image_path, name))
-            # print('convertor\\fold{}\\images\\{}\\{}'.format(fold, path2save, name))
+
             if not os.path.exists('convertor/fold{}/labels/'.format(fold) + path2save):
                 os.makedirs('convertor/fold{}/labels/'.format(fold) + path2save)
             with open('convertor/fold{}/labels/'.format(fold) + path2save + name.split('.')[0] + ".txt", 'a+') as f:

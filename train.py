@@ -172,7 +172,7 @@ def train(hyp):
 
     # Trainloader
     dataloader, dataset = create_dataloader(train_path, imgsz, batch_size, gs, opt,
-                                            hyp=hyp, augment=True, cache=opt.cache_images, rect=opt.rect)
+                                            hyp=hyp, augment=False, cache=opt.cache_images, rect=opt.rect)
     mlc = np.concatenate(dataset.labels, 0)[:, 0].max()  # max label class
     assert mlc < nc, 'Label class %g exceeds nc=%g in %s. Correct your labels or your model.' % (
         mlc, nc, opt.cfg)
@@ -394,16 +394,16 @@ def train(hyp):
 
 
 if __name__ == '__main__':
-    check_git_status()
+    # check_git_status()
     parser = argparse.ArgumentParser()
-    parser.add_argument('--epochs', type=int, default=50)
-    parser.add_argument('--batch-size', type=int, default=32)
+    parser.add_argument('--epochs', type=int, default=60)
+    parser.add_argument('--batch-size', type=int, default=16)
     parser.add_argument('--cfg', type=str,
-                        default='models/yolov5s.yaml', help='*.cfg path')
+                        default='models/yolov5x.yaml', help='*.cfg path')
     parser.add_argument('--data', type=str,
                         default='data/coco128.yaml', help='*.data path')
     parser.add_argument('--img-size', nargs='+', type=int,
-                        default=[512, 512], help='train,test sizes')
+                        default=[1024, 1024], help='train,test sizes')
     parser.add_argument('--rect', action='store_true',
                         help='rectangular training')
     parser.add_argument('--resume', action='store_true',
@@ -419,7 +419,7 @@ if __name__ == '__main__':
     parser.add_argument('--bucket', type=str, default='', help='gsutil bucket')
     parser.add_argument('--cache-images', action='store_true',
                         help='cache images for faster training')
-    parser.add_argument('--weights', type=str, default='weights/yolov5s.pt',
+    parser.add_argument('--weights', type=str, default='weights/yolov5x.pt',
                         help='initial weights path')
     parser.add_argument(
         '--name', default='', help='renames results.txt to results_name.txt if supplied')
