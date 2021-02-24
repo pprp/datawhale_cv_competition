@@ -5,11 +5,11 @@ from tqdm import tqdm
 import shutil as sh
 import cv2
 
-# josn_path = "/home/pdluser/data/guangdong1_round2_train2_20191004_Annotations/Annotations/anno_train.json"
-# image_path = "/home/pdluser/data/guangdong1_round2_train2_20191004_images/defect/"
+josn_path = "/media/niu/niu_d/data/competition/guangdong1_round2_train2_20191004_Annotations/guangdong1_round2_train2_20191004_Annotations/Annotations/anno_train.json"
+image_path = "/media/niu/niu_d/data/competition/guangdong1_round2_train2_20191004_images/guangdong1_round2_train2_20191004_images/defect/"
 
-josn_path = "/home/pdluser/data/guangdong1_round2_train_part1_20190924/Annotations/anno_train.json"
-image_path = "/home/pdluser/data/guangdong1_round2_train_part1_20190924/defect"
+# josn_path = "/home/pdluser/data/guangdong1_round2_train_part1_20190924/Annotations/anno_train.json"
+# image_path = "/home/pdluser/data/guangdong1_round2_train_part1_20190924/defect"
 
 # josn_path = "/home/pdluser/data/guangdong1_round2_train_part1_20190924/Annotations/anno_train.json"
 # image_path = "/home/pdluser/data/guangdong1_round2_train_part3_20190924/defect"
