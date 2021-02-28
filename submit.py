@@ -23,7 +23,7 @@ def detect(save_img=False):
     half = device.type != 'cpu'  # half precision only supported on CUDA
 
     # Load model
-    google_utils.attempt_download(weights)
+    # google_utils.attempt_download(weights)
     model = torch.load(weights, map_location=device)['model'].float().eval()  # load FP32 model
     imgsz = check_img_size(imgsz, s=model.stride.max())  # check img_size
     if half:
