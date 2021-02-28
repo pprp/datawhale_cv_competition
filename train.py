@@ -475,8 +475,9 @@ if __name__ == '__main__':
     opt.global_rank = int(os.environ['RANK']) if 'RANK' in os.environ else -1
     set_logging(opt.global_rank)
     if opt.global_rank in [-1, 0]:
-        check_git_status()
-        check_requirements()
+        # check_git_status()
+        # check_requirements()
+        pass
 
     # Resume
     if opt.resume:  # resume an interrupted run
